@@ -28,5 +28,11 @@ resource "aws_launch_template" "launch-template" {
     }
   }
 
-  //user_data = filebase64("${path.module}/example.sh")
+  user_data = base64encode(templatefile("${path.module}/userdata.sh", {
+    ENV              = var.ENV
+    COMPONENT        = var.COMPONENT
+    MONGODB_ENDPOINT = var.DOCDB_ENDPOINT
+    DOCDB_USER       = ""
+
+  }))
 }
