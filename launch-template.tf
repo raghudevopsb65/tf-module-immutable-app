@@ -1,4 +1,4 @@
-resource "aws_launch_template" "foo" {
+resource "aws_launch_template" "launch-template" {
   name                   = local.TAG_PREFIX
   image_id               = data.aws_ami.ami.image_id
   instance_type          = var.INSTANCE_TYPE
