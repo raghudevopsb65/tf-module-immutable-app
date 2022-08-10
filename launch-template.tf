@@ -21,7 +21,7 @@ resource "aws_launch_template" "launch-template" {
   }
 
   tag_specifications {
-    resource_type = "spot"
+    resource_type = "spot-instances-request"
 
     tags = {
       Name = local.TAG_PREFIX
