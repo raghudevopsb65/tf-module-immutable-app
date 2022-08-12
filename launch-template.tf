@@ -16,7 +16,8 @@ resource "aws_launch_template" "launch-template" {
     resource_type = "instance"
 
     tags = {
-      Name = local.TAG_PREFIX
+      Name    = local.TAG_PREFIX
+      Monitor = "yes"
     }
   }
 
